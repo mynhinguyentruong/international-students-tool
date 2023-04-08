@@ -1,7 +1,6 @@
 'use client';
 
 import { Card, Title, BarChart, Subtitle, LineChart } from "@tremor/react";
-import { useState } from "react";
 
 const chartdata = [
     {
