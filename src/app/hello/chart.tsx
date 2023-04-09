@@ -21,22 +21,27 @@ const data = [
     {
         year: 1951,
         "Population growth rate": 1.74,
+        "Population decreased": 1.12
     },
     {
         year: 1952,
         "Population growth rate": 1.93,
+        "Population decreased": 1.7
     },
     {
         year: 1953,
         "Population growth rate": 1.9,
+        "Population decreased": 3
     },
     {
         year: 1954,
         "Population growth rate": 1.98,
+        "Population decreased": 1.7
     },
     {
         year: 1955,
         "Population growth rate": 2,
+        "Population decreased": 3
     },
 ];
 
@@ -59,8 +64,8 @@ export default function Chart() {
                     className="mt-6"
                     data={data}
                     index="year"
-                    categories={["Population growth rate"]}
-                    colors={["blue"]}
+                    categories={["Population growth rate","Population decreased"]}
+                    colors={["blue", "red"]}
                     valueFormatter={percentageDataFormatter}
                     yAxisWidth={40}
                 />
