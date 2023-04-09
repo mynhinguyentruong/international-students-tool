@@ -1,6 +1,8 @@
 'use client';
 
 import { Card, Title, BarChart, Subtitle, LineChart } from "@tremor/react";
+import { Suspense } from "react";
+import Loading from "@/app/hello/loading";
 
 const chartdata = [
     {
@@ -53,23 +55,29 @@ const percentageDataFormatter = (number: number) => {
     return `${Intl.NumberFormat("us").format(number).toString()}%`;
 }
 
+export function Component() {
+    return (
+        <Card>
+            <Title>Population growth rate (1951 to 2021)</Title>
+            <LineChart
+                className="mt-6"
+                data={data}
+                index="year"
+                categories={["Population growth rate","Population decreased"]}
+                colors={["blue", "red"]}
+                valueFormatter={percentageDataFormatter}
+                yAxisWidth={40}
+            />
+        </Card>
+    )
+}
+
 export default function Chart() {
 
     // const [data, setData] = useState(chartdata)
     return (
         <>
-            <Card>
-                <Title>Population growth rate (1951 to 2021)</Title>
-                <LineChart
-                    className="mt-6"
-                    data={data}
-                    index="year"
-                    categories={["Population growth rate","Population decreased"]}
-                    colors={["blue", "red"]}
-                    valueFormatter={percentageDataFormatter}
-                    yAxisWidth={40}
-                />
-            </Card>
+
         <Card>
             <Title>Number of species threatened with extinction (2021)</Title>
             <Subtitle>
