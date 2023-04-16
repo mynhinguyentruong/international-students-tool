@@ -1,7 +1,9 @@
+import SkeletonCard from "@/ui/skeleton-card";
+
 export default function Loading() {
 
     console.log("I loaded")
     return (
-        <h1>Loading...</h1>
+        <SkeletonCard isLoading={true} />
     )
 }

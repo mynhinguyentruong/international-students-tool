@@ -59,6 +59,7 @@ export function Component() {
     return (
         <Card>
             <Title>Population growth rate (1951 to 2021)</Title>
+            <Suspense fallback={<h1 className="text-9xl">Loading...</h1>}>
             <LineChart
                 className="mt-6"
                 data={data}
@@ -68,6 +69,7 @@ export function Component() {
                 valueFormatter={percentageDataFormatter}
                 yAxisWidth={40}
             />
+            </Suspense>
         </Card>
     )
 }

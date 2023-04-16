@@ -6,9 +6,9 @@ import { Component } from "@/app/hello/chart";
 export default function ChartPage() {
     return (
         <main>
-            <Suspense fallback={<Loading/>}>
+
                 <Component />
-            </Suspense>
+
             <Chart />
 
         </main>
