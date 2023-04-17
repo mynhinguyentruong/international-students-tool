@@ -1,4 +1,4 @@
-'use client';
+
 
 import { Card, Title, BarChart, Subtitle, LineChart } from "@tremor/react";
 import { Suspense } from "react";
@@ -55,7 +55,7 @@ const percentageDataFormatter = (number: number) => {
     return `${Intl.NumberFormat("us").format(number).toString()}%`;
 }
 
-export function Component() {
+export async function Component() {
     return (
         <Card>
             <Title>Population growth rate (1951 to 2021)</Title>
